@@ -17,7 +17,5 @@
     <h2 *ngIf="!isLogin" class="h2-three">
       For more content <a class="home-login" [routerLink]="'/login'">login.</a>
     </h2>
-
-    <app-last-three-animals *ngFor="let animal of lastThreeAnimals" [animal]="animal" [key]="animal.id"></app-last-three-animals>
   </section>
 </div>

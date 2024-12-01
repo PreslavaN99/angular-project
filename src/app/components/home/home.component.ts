@@ -1,43 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, RouterLink} from '@angular/router';
 import { AuthService } from '../../api/service/authentication.service';
-/*import { AnimalService } from '../../api/service/animal.service';*/
-import { Router } from '@angular/router';
-import { from } from 'rxjs';
-/*import { LastTheeAnimalsComponent } from '../last-three-added/last-three-animals.component';*/
-import { FirstComponent } from './home-card/first/first.component';
-import { SecondComponent } from './home-card/second/second.component';
-import { ThirdComponent } from './home-card/third/third.component';
+import { AnimalService } from '../../api/service/animal.service';
+import {LastTheeAnimalsComponent} from '../lastThreeAnimals/last-thee-animals.component';
+import {NgForOf, NgIf} from '@angular/common';
+import {FirstComponent} from './home-card/first/first.component';
+import {SecondComponent} from './home-card/second/second.component';
+import {ThirdComponent} from './home-card/third/third.component';
+import {FooterComponent} from '../footer/footer.component';
+import {NavBarComponent} from '../../navBar/nav-bar.component';  // Make sure the service is correctly imported
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  standalone:true;
-  styleUrls: ['./home.component.css'],
-  imports: [FirstComponent,SecondComponent,ThirdComponent],
+  standalone: true,
+  imports: [
+    LastTheeAnimalsComponent,
+    NgIf,
+    RouterLink,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent,
+    NgForOf,
+    FooterComponent,
+    NavBarComponent
+  ],
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   isLogin: boolean = false;
-  lastThreeAnimals: any[] = [];
+  lastTreeAnimals: any[] = [];
 
   constructor(
-    private authService: AuthService,
-    /*private animalService: AnimalService,*/
+    protected authService: AuthService,
+    private animalService: AnimalService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-
-    // Проверка дали потребителят е логнат
     this.isLogin = this.authService.isUserLoggedIn();
 
-    /*// Зареждане на последните 3 животни
+    // Fetch last three animals
     this.animalService.getLastThreeAnimals().subscribe(
-      (data: any) => {
-        this.lastThreeAnimals = data;
+      (data) => {
+        this.lastTreeAnimals = data;
       },
-      (error) => {
-        console.error(error);
+      (err) => {
+        console.error('Error fetching animals:', err);
       }
-    );*/
+    );
   }
 }

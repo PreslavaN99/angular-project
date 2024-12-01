@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {NavBarComponent} from '../../navBar/nav-bar.component';
-import {FooterComponent} from '../footer/footer.component';
+import {NavBarComponent} from './navBar/nav-bar.component';
+import {FooterComponent} from './components/footer/footer.component';
 
 @Component({
   selector: 'app-layout',
@@ -19,6 +19,4 @@ import {FooterComponent} from '../footer/footer.component';
     FooterComponent
   ]
 })
-export class LayoutComponent {
-
-}
+export class LayoutComponent {}

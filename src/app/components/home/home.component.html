@@ -1,7 +1,6 @@
-
-<div resetScroll>
+<div>
   <h1>Adopt Animal</h1>
-  <p *ngIf="isLogin" class="welcome">Welcome, {{ loggedInUserName }}!</p>
+  <p *ngIf="isLogin" class="welcome">Welcome, {{ authService.getLoggedInUserName() }}!</p>
 
   <section class="main">
     <app-first></app-first>
@@ -11,11 +10,14 @@
 
   <section class="three">
     <h2 class="h2-three">
-      <i class="fas fa-long-arrow-alt-down"></i> Here can see last three added animals
+      <i class="fas fa-long-arrow-alt-down"></i> Here you can see the last three added animals
       <i class="fas fa-long-arrow-alt-down"></i>
     </h2>
+
     <h2 *ngIf="!isLogin" class="h2-three">
-      For more content <a class="home-login" [routerLink]="'/login'">login.</a>
+      For more content <a routerLink="/login" class="home-login">login.</a>
     </h2>
+
+    <app-last-thee-animals *ngFor="let animal of lastTreeAnimals" [animal]="animal"></app-last-thee-animals>
   </section>
 </div>

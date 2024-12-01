@@ -1,0 +1,43 @@
+<div class="div-c">
+  <div class="flex">
+    <div class="login-box">
+      <h2>Register</h2>
+      <form *ngIf="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+        <div class="user-box">
+          <input formControlName="username" />
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input formControlName="email" />
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input formControlName="password" type="password" />
+          <label>Password</label>
+        </div>
+        <div class="user-box">
+          <input formControlName="repassword" type="password" />
+          <label>Repeat password</label>
+        </div>
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </button>
+        <a routerLink="/login">Already member? Login here</a>
+      </form>
+    </div>
+
+    <div class="errors">
+      <div *ngIf="fieldsCheck.notMatch" class="warning">
+        Passwords don't match!
+      </div>
+      <div *ngIf="fieldsCheck.allFields" class="warning">Fill all fields!</div>
+      <div *ngFor="let error of dbError" class="warning">
+        {{ error }}
+      </div>
+    </div>
+  </div>
+</div>

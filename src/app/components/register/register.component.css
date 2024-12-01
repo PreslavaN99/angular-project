@@ -215,7 +215,7 @@ body {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent,#CB997E);
+  background: linear-gradient(180deg, transparent, #CB997E);
   animation: btn-anim2 1s linear infinite;
   animation-delay: .25s
 }
@@ -264,7 +264,7 @@ body {
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #CB997E,
-  0 0 25px#CB997E,
+  0 0 25px #CB997E,
   0 0 50px #CB997E,
   0 0 100px #CB997E;
   cursor: pointer;

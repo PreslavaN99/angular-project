@@ -1,59 +1,63 @@
-import { Component, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router } from 'express';
+import {Component} from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../api/service/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    FormsModule,
+    NgIf,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginForm: FormGroup;
+  hasLoginFailed: boolean = false;
+  allFieldsRequired: boolean = false;
+  userInfo = { hasLoginFailed: false };
+  fieldsCheck = { allFields: false };
 
-  isLoginView: boolean = false;
-
-  userRegisterObj: any = {
-    userName:'',
-    password:'',
-    emailId:''
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(2)]],
+      password: ['', [Validators.required, Validators.minLength(2)]],
+    });
   }
-  userLogin: any = {
-    userName:'',
-    password:'',
-  }
 
-  router = inject(Router);
-
-  onRegister(){
-    const isLocalData = localStorage.getItem("angular18Local");
-    if (isLocalData != null){
-      const localArray =JSON.parse(isLocalData);
-      localArray.push(this.userRegisterObj);
-      localStorage.setItem("angular18Local",JSON.stringify(localArray))
-    }else{
-      const localArray = [];
-      localArray.push(this.userRegisterObj);
-      localStorage.setItem("angular18Local",JSON.stringify(localArray))
+  onSubmitLogin(): void {
+    if (this.loginForm.invalid) {
+      this.allFieldsRequired = true;
+      this.fieldsCheck.allFields = true;
+      return;
     }
-    alert("Registration Success");
-  }
 
-  onLogin(){
-    const isLocalData = localStorage.getItem("angular18Local");
-    if (isLocalData != null){
-      const users = JSON.parse(isLocalData);
+    this.allFieldsRequired = false;
+    this.fieldsCheck.allFields = false;
+    const { username, password } = this.loginForm.value;
 
-
-      const isUserFound = users.find((m: any) => m.userName == this.userLogin.userName && m.password == this.userLogin.password)
-      if(isUserFound != undefined){
-        this.router.navigateByUrl('dashbord')
-      }else{
-        alert("User name or password is Wrong")
+    this.authService.authJwtService(username, password).subscribe(
+      (response: any) => {
+        this.authService.login(username, response.token);
+        this.router.navigate(['/']);
+      },
+      (error: any) => {
+        console.error('Login failed:', error);  // Log the error
+        this.loginForm.get('password')?.reset();
+        this.hasLoginFailed = true;
+        this.userInfo.hasLoginFailed = true;
       }
-    } else {
-      alert("No user found")
-    }
+    );
   }
-
 }

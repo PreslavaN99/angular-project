@@ -1,0 +1,47 @@
+<header class="navbar top">
+  <nav>
+    <ul>
+      <ng-container *ngIf="user; else notLoggedIn">
+        <li *ngFor="let link of [
+            {path: '/', label: 'Home'},
+            {path: '/animal-add', label: 'Add animal'},
+            {path: '/account', label: 'Account'},
+            {path: '/find-all', label: 'All animals'},
+            {path: '/animal-find', label: 'Find animal'},
+            {path: '/animal-manage', label: 'Manage my animals'},
+            {path: '/logout', label: 'Logout'}
+        ]">
+          <a [routerLink]="link.path" routerLinkActive="active">
+            <li class="navbar">
+              {{ link.label }} <i class="fas" [ngClass]="link"></i>
+            </li>
+          </a>
+        </li>
+      </ng-container>
+
+      <ng-template #notLoggedIn>
+        <li *ngFor="let link of [
+            {path: '/login', label: 'Login'},
+            {path: '/register', label: 'Register'},
+            {path: '/', label: 'Home'}
+        ]">
+          <a [routerLink]="link.path" routerLinkActive="active">
+            <li class="navbar">
+              {{ link.label }} <i class="fas" [ngClass]="link"></i>
+            </li>
+          </a>
+        </li>
+      </ng-template>
+
+      <ng-container *ngIf="isAdmin()">
+        <li>
+          <a [routerLink]="'/admin'" routerLinkActive="active">
+            <li class="navbar">
+              Admin panel <i class="fas fa-user-shield"></i>
+            </li>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </nav>
+</header>

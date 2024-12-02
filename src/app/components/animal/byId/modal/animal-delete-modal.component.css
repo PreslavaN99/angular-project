@@ -1,0 +1,36 @@
+.button-animal-edit{
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #ef5353;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+    border: none;
+}
+.button-animal-edit:hover{
+    background-color: red;
+}
+.delete, .back{
+    padding: 4px;
+    margin: 2px;
+    border-radius: 4px;
+    border: none
+}
+.delete{
+    background-color: #ef5353;
+}
+.back{
+    background-color: #6B705C;
+}
+.modal{
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+    margin: 5px;
+}

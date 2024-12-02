@@ -4,8 +4,12 @@
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #FFE8D6;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
 }
 
 /* Heading styling */
@@ -82,7 +86,7 @@
   display: inline-block;
   cursor: pointer;
   padding: 10px 15px;
-  background-color: #B7B7A4;
+  background-color: #6B705C;
   color: #fff;
   margin: 15px;
   font-size: 14px;
@@ -91,7 +95,7 @@
   transition: background-color 0.3s;
 }
 .card .add-img:hover {
-  background-color: #6B705C;
+  background-color: #B7B7A4;
 }
 
 

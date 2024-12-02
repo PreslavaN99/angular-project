@@ -2,7 +2,7 @@
   <h1 class="add">Add Animal</h1>
   <p class="info">
     To create a new animal for adoption, think about a cool name. After that,
-    think about a keyword that associates with this animal. Finally, fill the
+    think about a species that associates with this animal. Finally, fill the
     info, add a picture, click create, and help find a new home and family for
     them!
   </p>
@@ -28,11 +28,11 @@
       ></textarea>
 
       <label>Species:</label>
-      <textarea
-        class="animal-add-species"
-        name="species"
-        placeholder="cat"
-      ></textarea>
+      <select class="animal-add-species" name="species" required>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="others">Others</option>
+      </select>
 
       <label>Info:</label>
       <textarea
@@ -51,7 +51,7 @@
           Add Image
         </label>
       </div>
-      <button class="create-animal-button" type="submit">Create</button>
+      <button class="button-86" type="submit">Create</button>
     </div>
   </form>
 </div>

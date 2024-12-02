@@ -28,7 +28,7 @@ li {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background-color: #D6CFC7;
+  background-color: #6B705C;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
@@ -37,7 +37,7 @@ li {
 }
 
 li:hover {
-  background-color: #A39F91;
+  background-color: #B7B7A4;
   cursor: pointer;
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);

@@ -1,0 +1,15 @@
+.role-manage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+p, label, input,button{
+    margin: 2px;
+    padding: 2px;
+}
+
+input,button{
+    border-radius: 25px;
+    border: 0.5px solid #6B705C;
+}

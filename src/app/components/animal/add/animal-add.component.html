@@ -1,0 +1,57 @@
+<div class="card">
+  <h1 class="add">Add Animal</h1>
+  <p class="info">
+    To create a new animal for adoption, think about a cool name. After that,
+    think about a keyword that associates with this animal. Finally, fill the
+    info, add a picture, click create, and help find a new home and family for
+    them!
+  </p>
+  <div>
+    <div *ngIf="fieldsCheck.allFields" class="warnings">Fill all fields!</div>
+    <div *ngIf="dbError">
+      <div *ngFor="let error of dbError" class="warnings">
+        {{ error }}
+      </div>
+    </div>
+  </div>
+  <form
+    #formRef
+    (submit)="onSubmitCreate($event)"
+    enctype="multipart/form-data"
+  >
+    <div class="inputs">
+      <label>Name:</label>
+      <textarea
+        class="animal-add-name"
+        name="name"
+        placeholder="Pesho"
+      ></textarea>
+
+      <label>Species:</label>
+      <textarea
+        class="animal-add-species"
+        name="species"
+        placeholder="cat"
+      ></textarea>
+
+      <label>Info:</label>
+      <textarea
+        class="animal-add-info"
+        name="info"
+        placeholder="Pesho is a gentle explorer. He enjoys sunbathing by the window, chasing feather toys, and curling up in cozy corners."
+      ></textarea>
+
+      <div>
+        <label class="add-img">
+          <input
+            type="file"
+            (change)="handleFileChange($event)"
+            accept=".jpg,.jpeg,.png,.gif"
+          />
+          Add Image
+        </label>
+      </div>
+      <button class="create-animal-button" type="submit">Create</button>
+    </div>
+  </form>
+</div>

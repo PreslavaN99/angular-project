@@ -1,0 +1,46 @@
+<h1>Edit Animal</h1>
+<form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+  <div *ngIf="fieldsCheck.allFields" class="warnings-edit">Fill all fields!</div>
+  <div *ngFor="let error of dbErrors" class="warnings-edit">
+    {{ error }}
+  </div>
+
+  <div class="wrap">
+    <label class="read-head">Name</label>
+    <input
+      class="edit-input name-edit"
+      formControlName="name"
+    />
+
+    <label class="read-head">Species</label>
+    <input
+      class="edit-input species"
+      formControlName="species"
+    />
+
+    <label class="read-head">Info</label>
+    <textarea
+      class="edit-input info-edit"
+      formControlName="info"
+    ></textarea>
+
+    <img
+      [src]="animal.imageUrl"
+      class="image"
+      alt="picture-animal"
+    />
+
+    <div>
+      <label class="add-img">
+        <input
+          type="file"
+          (change)="onFileChange($event)"
+          accept=".jpg,.jpeg,.png,.gif"
+        />
+        Change Image
+      </label>
+    </div>
+    <button class="button-animal-edit" type="submit">Save changes</button>
+    <app-animal-delete-modal [id]="animal.id"></app-animal-delete-modal>
+  </div>
+</form>

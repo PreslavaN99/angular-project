@@ -8,3 +8,6 @@ html, * {
 input, button, textarea, select {
   font-family: 'Roboto', sans-serif; 
 }
+form, input, label,div, p{
+  background-color: transparent;
+}

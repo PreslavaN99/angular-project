@@ -1,0 +1,84 @@
+h1 {
+  color: #6B705C;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  background-color: transparent;
+}
+
+/* Стилове за параграфите */
+p {
+  margin: 10px 0;
+}
+
+
+.error-admin {
+  color: #e74c3c;
+  font-weight: bold;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Контейнер за управлението на роли */
+.wrap-role-manage {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+/* Компоненти за управление */
+app-add-admin-role,
+app-delete-user,
+app-remove-admin-role {
+  width: 30%;
+  background-color: #FFE8D6;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* Стилове за списъка с потребителите */
+.p-fetch-usernames {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 20px 0 10px;
+}
+
+.ul-usernames {
+  list-style-type: none;
+  padding: 0;
+}
+
+.li-usernames {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Медиен запитване за по-малки екрани */
+@media (max-width: 768px) {
+  .wrap-role-manage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  app-add-admin-role,
+  app-delete-user,
+  app-remove-admin-role {
+    width: 90%;
+  }
+}
+

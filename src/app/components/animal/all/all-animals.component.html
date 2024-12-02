@@ -1,0 +1,14 @@
+<h1>All Animals</h1>
+<section class="wrap-all">
+  <ng-container *ngIf="animals?.length > 0; else noAnimals">
+    <app-animal-base-card
+      *ngFor="let animal of animals; let i = index"
+      [animal]="animal"
+      [id]="i + 1"
+    ></app-animal-base-card>
+  </ng-container>
+
+  <ng-template #noAnimals>
+    <p>No animals in database</p>
+  </ng-template>
+</section>

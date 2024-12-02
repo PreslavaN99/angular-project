@@ -1,0 +1,27 @@
+<section class="main-section">
+  <div class="content">
+    <img [src]="animal.imageUrl" class="image" alt="picture-animal"/>
+    <p class="title">
+      <i class="fas fa-text-height"></i>
+      <span class="property">Name:</span> {{ animal.name }}
+    </p>
+    <p>
+      <i class="fas fa-align-right"></i>
+      <span class="property">Info:</span> {{ animal.info }}
+    </p>
+    <p>
+      <i class="fas fa-user"></i>
+      <span class="property">Created by:</span> {{ animal.createdBy }}
+    </p>
+    <p>
+      <i class="fas fa-key"></i>
+      <span class="property">Species:</span> {{ animal.species }}
+    </p>
+    <p>
+      <i class="fas fa-calendar-alt"></i>
+      <span class="property">Date added:</span> {{ formattedDate }}
+    </p>
+  </div>
+  <button class="link" (click)="navigateToEdit()">Edit animal</button>
+  <button class="link" (click)="navigateToView()">View animal</button>
+</section>

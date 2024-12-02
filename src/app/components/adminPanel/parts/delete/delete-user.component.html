@@ -1,0 +1,20 @@
+<form class="role-manage">
+  <!-- Modal -->
+  <div class="modal-style-likes" *ngIf="isOpen">
+    <p class="title-modal-likes">Delete user</p>
+    <button (click)="onDeleteUser()" class="button-joke-edit">Delete</button>
+    <button (click)="toggleModal($event)" class="button-joke-edit">Back</button>
+  </div>
+
+  <p class="admin-titles">Delete user immediately</p>
+  <label>Enter username (min 3 symbols)</label>
+  <input
+    name="username"
+    (input)="enterUsernameForDelete($event)"
+    (keyup)="fetchUsers.emit($event)"
+  />
+  <i class="fas fa-search"></i>
+  <button (click)="toggleModal($event)" type="button">
+    <i class="fas fa-eraser"></i> Delete
+  </button>
+</form>

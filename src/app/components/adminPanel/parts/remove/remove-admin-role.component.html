@@ -1,0 +1,20 @@
+<form class="role-manage">
+  <!-- Modal -->
+  <div class="modal-style-likes" *ngIf="isOpen">
+    <p class="title-modal-likes">Remove user authorities:</p>
+    <button (click)="onRemoveRole()" class="button-joke-edit">Remove role</button>
+    <button (click)="toggleModal($event)" class="button-joke-edit">Back</button>
+  </div>
+
+  <p class="admin-titles">Remove Admin role of a user</p>
+  <label>Enter username (min 3 symbols)</label>
+  <input
+    name="username"
+    (input)="setUsernameFromInputForRemoveAdmin($event)"
+    (keyup)="fetchUsers.emit($event)"
+  />
+  <i class="fas fa-search"></i>
+  <button (click)="toggleModal($event)">
+    <i class="fas fa-minus"></i> Remove
+  </button>
+</form>

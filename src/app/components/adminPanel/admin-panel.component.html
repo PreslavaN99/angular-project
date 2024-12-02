@@ -1,0 +1,15 @@
+<h1>Manage very important things</h1>
+<p *ngIf="error" class="error-admin">{{ error }}</p>
+
+<div class="wrap-role-manage">
+  <app-add-admin-role (fetchUsers)="fetchUsers($event)" (setError)="error = $event"></app-add-admin-role>
+  <app-delete-user (fetchUsers)="fetchUsers($event)" (setError)="error = $event"></app-delete-user>
+  <app-remove-admin-role (fetchUsers)="fetchUsers($event)" (setError)="error = $event"></app-remove-admin-role>
+</div>
+
+<div *ngIf="users.length >= 1">
+  <p class="p-fetch-usernames">Usernames from database</p>
+  <ul class="ul-usernames">
+    <li *ngFor="let user of users" class="li-usernames">{{ user }}</li>
+  </ul>
+</div>

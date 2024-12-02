@@ -1,0 +1,12 @@
+<h1>Manage Animals</h1>
+<div class="wrap-manage">
+  <ng-container *ngIf="animals.length > 0; else noContent">
+    <app-animal-card *ngFor="let animal of animals" [animal]="animal"></app-animal-card>
+  </ng-container>
+  <ng-template #noContent>
+    <div class="no-content">
+      <p>No created animals for now.</p>
+      <button class="link" (click)="navigateToCreate()">Create animal here</button>
+    </div>
+  </ng-template>
+</div>

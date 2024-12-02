@@ -1,0 +1,17 @@
+<form class="role-manage">
+  <div class="modal-style-likes" *ngIf="isOpen">
+    <p class="title-modal-likes">Upgrade user authorities:</p>
+    <button (click)="onUpgradeRole()" class="button-joke-edit">Add role</button>
+    <button (click)="toggleModal($event)" class="button-joke-edit">Back</button>
+  </div>
+  <p class="admin-titles">Add Admin role to a user</p>
+  <label>Enter username (min 3 symbols)</label>
+  <input
+    name="username"
+    (keyup)="fetchUsers.emit($event)"
+    (input)="setUsernameFromInputForAdminRole($event)"
+  />
+  <button (click)="toggleModal($event)" type="submit">
+   Add
+  </button>
+</form>

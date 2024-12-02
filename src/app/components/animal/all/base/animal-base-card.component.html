@@ -1,0 +1,45 @@
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal-style-likes" *ngIf="isOpen">-->
+<!--  <div class="modal-content">-->
+<!--    <p class="title-modal-likes">Users who liked this animal:</p>-->
+
+<!--    &lt;!&ndash; Loop through likes using *ngFor &ndash;&gt;-->
+<!--    <p *ngIf="animal?.likes?.length > 0">-->
+<!--      <span *ngFor="let like of animal?.likes; let last = last">-->
+<!--        {{ like.ownerOfLike }}<span *ngIf="!last">, </span>-->
+<!--      </span>-->
+<!--    </p>-->
+<!--    <p *ngIf="!animal?.likes?.length">No likes</p>-->
+
+<!--    <button (click)="toggleModal()" class="button-animal-edit">Back</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Animal Card &ndash;&gt;-->
+<!--<section class="animal-card">-->
+<!--  <div (mouseover)="changeR($event)" (mouseout)="changeL($event)">-->
+<!--    <p class="animal-card-data">No: {{ id }}</p>-->
+<!--    <p class="animal-card-data">Name: {{ animal?.name }}</p>-->
+<!--    <p class="animal-card-data">Species: {{ animal?.species }}</p>-->
+<!--    <p class="animal-card-data hover-data" (click)="toggleModal()">-->
+<!--      Total likes: {{ animal?.likes?.length || 0 }} (show)-->
+<!--    </p>-->
+<!--    <p-->
+<!--      class="animal-card-data show-comments"-->
+<!--      (mouseenter)="showComments()"-->
+<!--      (mouseleave)="hideComments()"-->
+<!--    >-->
+<!--      Total comments: {{ animal?.comments?.length || 0 }}-->
+<!--    </p>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Display Comments &ndash;&gt;-->
+<!--  <div *ngIf="comments.display">-->
+<!--    <p *ngFor="let comment of animal?.comments; let i = index" class="comment">-->
+<!--      {{ i + 1 }}. {{ comment.content }}-->
+<!--    </p>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Link to View Animal &ndash;&gt;-->
+<!--  <button (click)="viewAnimal()" class="animal-card-link">View animal</button>-->
+<!--</section>-->

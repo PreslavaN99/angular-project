@@ -7,8 +7,7 @@ import {NgForOf, NgIf} from '@angular/common';
 import {FirstComponent} from './home-card/first/first.component';
 import {SecondComponent} from './home-card/second/second.component';
 import {ThirdComponent} from './home-card/third/third.component';
-import {FooterComponent} from '../footer/footer.component';
-import {NavBarComponent} from '../../navBar/nav-bar.component';  // Make sure the service is correctly imported
+
 
 @Component({
   selector: 'app-home',
@@ -22,8 +21,7 @@ import {NavBarComponent} from '../../navBar/nav-bar.component';  // Make sure th
     SecondComponent,
     ThirdComponent,
     NgForOf,
-    FooterComponent,
-    NavBarComponent
+
   ],
   styleUrls: ['./home.component.css']
 })

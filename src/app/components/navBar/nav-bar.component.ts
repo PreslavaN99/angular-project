@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../api/service/authentication.service';
+import {AuthService} from '../../api/service/authentication.service';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 

@@ -22,7 +22,7 @@ export class AnimalService {
     return this.http.post(`${API_URL}/animal`, form, { headers: this.getHeaders() });
   }
 
-  onAddComment(info: string, animalId: string, ownerOfComment: string): Observable<any> {
+  onAddComment(info: string, animalId: string, ownerOfComment: string | null): Observable<any> {
     const comment = { info, animalId, ownerOfComment };
     return this.http.post(`${API_URL}/add/comment/:${animalId}`, comment, {
       headers: this.getHeaders().set('Content-Type', 'application/json')

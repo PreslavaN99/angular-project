@@ -1,0 +1,39 @@
+<app-modal
+  *ngIf="isOpen"
+  [likes]="animal.likes"
+  (closeModal)="toggleModal()"
+></app-modal>
+
+<section class="animal-card">
+  <div
+    (mouseover)="changeColor($event.target, 'red')"
+    (mouseout)="changeColor($event.target, 'lightblue')"
+  >
+    <p class="animal-card-data">No: {{ id }}</p>
+    <p class="animal-card-data">Name: {{ animal.name }}</p>
+    <p class="animal-card-data">Species: {{ animal.species }}</p>
+    <p
+      class="animal-card-data hover-data"
+      (click)="toggleModal()"
+    >
+      Total likes: {{ animal.likes.length || 0 }} (show)
+    </p>
+    <p
+      (mouseenter)="showComments()"
+      (mouseleave)="hideComments()"
+      class="animal-card-data show-comments"
+    >
+      Total comments: {{ animal.comments.length || 0 }}
+    </p>
+  </div>
+
+  <div *ngIf="commentsDisplay">
+    <p *ngFor="let comment of animal.comments; let i = index" class="comment">
+      {{ i + 1 }}. {{ comment.content }}
+    </p>
+  </div>
+
+  <a [routerLink]="['/animal-read', animal.id]" class="animal-card-link">
+    View animal
+  </a>
+</section>

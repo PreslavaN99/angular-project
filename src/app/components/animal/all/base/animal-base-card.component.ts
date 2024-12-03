@@ -1,61 +1,43 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgForOf, NgIf } from '@angular/common';
+import {Animal} from '../../../../model/Animal';
+import {RouterLink} from '@angular/router';
+import {NgForOf, NgIf} from '@angular/common';
+import {ModalComponent} from '../modal/modal.component';
 
 @Component({
-  selector: 'app-animal-base-card',
-  templateUrl: './animal-base-card.component.html',
-  standalone: true,
+  selector: 'app-animal-card',
+  templateUrl: './animal-card.component.html',
+  styleUrls: ['./animal-card.component.css'],
   imports: [
+    RouterLink,
+    NgForOf,
     NgIf,
-    NgForOf
+    ModalComponent
   ],
-  styleUrls: ['./animal-base-card.component.css']
+  standalone: true
 })
-export class AnimalBaseCardComponent {
-  @Input() animal?: {
-    id: string; // Add the id property
-    likes?: { ownerOfLike: string }[];
-    comments?: { content: string }[];
-    name: string;
-    species: string;
-  };
+export class AnimalCardComponent {
+  @Input() animal!: Animal;
   @Input() id!: number;
 
-  comments = {
-    commentsData: this.animal?.comments || [],
-    display: false
-  };
-
-  isOpen: boolean = false;
-
-  constructor(private router: Router) {}
+  commentsDisplay = false;
+  isOpen = false;
 
   toggleModal(): void {
     this.isOpen = !this.isOpen;
   }
 
-  changeR(event: MouseEvent): void {
-    (event.target as HTMLElement).style.color = 'red';
-  }
-
-  changeL(event: MouseEvent): void {
-    (event.target as HTMLElement).style.color = 'lightblue';
+  showComments(): void {
+    this.commentsDisplay = true;
   }
 
   hideComments(): void {
-    this.comments.display = false;
+    this.commentsDisplay = false;
   }
 
-  showComments(): void {
-    this.comments.display = true;
-  }
-
-  viewAnimal(): void {
-    if (this.animal?.id) {  // Make sure the id is defined
-      this.router.navigate(['/animal-read', this.animal.id]);
-    } else {
-      console.error('Animal ID is missing!');
+  changeColor(target: EventTarget | null, color: string): void {
+    if (target instanceof HTMLElement) {
+      target.style.color = color;
     }
   }
 }

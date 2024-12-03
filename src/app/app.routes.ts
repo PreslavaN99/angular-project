@@ -9,7 +9,9 @@ import {AdminPanelComponent} from './components/adminPanel/admin.panel.component
 import {AnimalAddComponent} from './components/animal/add/animal-add.component';
 import {ManageAnimalComponent} from './components/animal/manage/manage-animal.component';
 import {AnimalByIdComponent} from './components/animal/byId/animal-by-id.component';
-import {AnimalBaseCardComponent} from './components/animal/all/base/animal-base-card.component';
+import {AllAnimalsComponent} from './components/animal/all/all-animals.component';
+import {AnimalComponent} from './components/animal/view/animal.component';
+import {AccountComponent} from './components/account/account.component';
 
 export const routes: Routes = [
   {
@@ -25,7 +27,9 @@ export const routes: Routes = [
       {path: 'animal-add', component: AnimalAddComponent},
       {path: 'animal-manage', component: ManageAnimalComponent},
       {path: 'animal/:id', component: AnimalByIdComponent},
-      {path: 'find-all', component: AnimalBaseCardComponent},
+      {path: 'find-all', component: AllAnimalsComponent},
+      {path: 'animal-read/:id', component: AnimalComponent},
+      {path: 'account', component: AccountComponent},
     ]
   }
 ];

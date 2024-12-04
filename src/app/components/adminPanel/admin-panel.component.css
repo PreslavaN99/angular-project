@@ -33,10 +33,13 @@ app-add-admin-role,
 app-delete-user,
 app-remove-admin-role {
   width: 30%;
-  background-color: #FFE8D6;
-  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   padding: 15px;
   display: flex;
   flex-direction: column;

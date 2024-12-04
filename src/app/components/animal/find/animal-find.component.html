@@ -1,59 +1,64 @@
-<h1>Find Animals and fun stories</h1>
+<div class="card">
+  <h1>Find Animals</h1>
 
-<!-- Most Liked Animals Section -->
-<div class="most-liked" *ngIf="mostLiked.length; else notEnoughLikes">
-  <p>Check the most liked Animal:</p>
-  <ul class="ul-usernames">
-    <li class="li-usernames best-animal" *ngFor="let animal of mostLiked">
-      <a class="animal-read-link" [routerLink]="['/animal-read', animal.id]">
-        Name: {{ animal.name }}
-      </a>
-    </li>
-  </ul>
-</div>
-<ng-template #notEnoughLikes>
-  <p>Not enough likes</p>
-</ng-template>
-
-<!-- View All Animals -->
-<section class="all-Animals">
-  <a class="link-all" routerLink="/find-all">
-    <i class="fas fa-list"></i> Here you can view all Animals
-  </a>
-</section>
-
-<!-- Search By Keyword -->
-<div class="search-keyword-wrap">
-  <div class="div-search-keyword-wrap">
-    <label class="label">Find by keyword</label>
-    <input
-      class="input-keyword-search"
-      name="keyword"
-      [(ngModel)]="keyword"
-      (keyup)="getAnimalsByKeyword(keyword)"
-    />
-  </div>
-
-  <div *ngIf="animals.length">
-    <p class="p-fetch-usernames">Animals (name) from database</p>
+  <!-- Most Liked Animals Section -->
+  <div class="most-liked" *ngIf="mostLiked.length; else notEnoughLikes">
+    <p>Check the most liked Animal:</p>
     <ul class="ul-usernames">
-      <li class="li-usernames" *ngFor="let animal of animals">
+      <li class="li-usernames best-animal" *ngFor="let animal of mostLiked">
         <a class="animal-read-link" [routerLink]="['/animal-read', animal.id]">
           {{ animal.name }}
         </a>
       </li>
     </ul>
   </div>
-</div>
+  <ng-template #notEnoughLikes>
+    <p>Not enough likes</p>
+  </ng-template>
 
-<!-- Last Three Added Animals -->
-<div class="lastThree">
-  <h2 class="h2-three">
-    <i class="fas fa-long-arrow-alt-down"></i> Here can read last three added
-    Animals <i class="fas fa-long-arrow-alt-down"></i>
-  </h2>
-  <app-last-thee-animals
-    *ngFor="let animal of lastThreeAnimals"
-    [animal]="animal"
-  ></app-last-thee-animals>
+  <!-- View All Animals -->
+  <section class="all-Animals">
+    <a class="link-all" routerLink="/find-all">
+      <i class="fas fa-list"></i> Here you can view all Animals
+    </a>
+  </section>
+
+  <!-- Search By Keyword -->
+  <div class="search-keyword-wrap">
+    <div class="div-search-keyword-wrap">
+      <label class="label">Find by species:</label>
+      <input
+        class="input-keyword-search"
+        name="keyword"
+        placeholder="cat/dog/other"
+        [(ngModel)]="keyword"
+        (keyup)="getAnimalsByKeyword(keyword)"
+      />
+    </div>
+
+    <div *ngIf="animals.length">
+      <p class="p-fetch-usernames">Animals (name) from database</p>
+      <ul class="ul-usernames">
+        <li class="li-usernames" *ngFor="let animal of animals">
+          <a
+            class="animal-read-link"
+            [routerLink]="['/animal-read', animal.id]"
+          >
+            {{ animal.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Last Three Added Animals -->
+  <div class="lastThree">
+    <h2 class="h2-three">
+      Here you can see the last three added animals
+    </h2>
+    <app-last-thee-animals
+      *ngFor="let animal of lastThreeAnimals"
+      [animal]="animal"
+    ></app-last-thee-animals>
+  </div>
 </div>

@@ -5,7 +5,7 @@ html, * {
   font-family: 'Roboto', sans-serif;
   background-color: #B7B7A4;
 }
-input,span, button, textarea, select,form, label, div, p, textarea,option, h1,h2,h3,h4,h5,h6 {
+input,span, button, textarea, select,form, label, div, p, textarea,b ,option, h1,h2,h3,h4,h5,h6 {
   font-family: 'Roboto', sans-serif; 
   background-color: transparent;
 }

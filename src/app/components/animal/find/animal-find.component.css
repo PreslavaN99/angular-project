@@ -1,32 +1,66 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+h1{
+  color: #6B705C;
+  padding: 10px;
+  margin: 10px;
+  font-size: 42px;
+}
 .search-keyword-wrap {
-  padding: 30px;
-  background: lightgoldenrodyellow;
+  padding: 10px;
+  justify-content: center;
+  background-color: transparent;
   border-radius: 30px;
   width: 50%;
-  margin: 20px auto;
+  margin: 12px auto;
   align-content: center;
   align-items: center;
+}
+.link-all{
+  color: #FFE8D6;
+  margin-top: 26px;
+  font-size: 22px;
+}
+.link-all:hover{
+  color: #6B705C;
+  transition: color 0.3s ease;
 }
 
 .div-search-keyword-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .div-search-keyword-wrap > label {
-  color: orange;
+  color: #FFE8D6;
+  background-color: transparent;
   font-size: 30px;
+  margin-right: 10px;
 }
 
 .div-search-keyword-wrap > input {
   border-radius: 30px;
+  color: #6B705C;
   width: 60%;
-  padding: 10px;
+  padding: 0, 10px;
+  margin: 0, 10px;
+  border: 2px solid #6B705C;
 }
 
 .search-keyword-wrap li {
-  background: orange;
+  background: transparent;
+  padding: 10px;
+}
+.p-fetch-usernames{
+  color: #6B705C;
+  padding: 10px;
+}
+::placeholder{
+  padding:4px;
 }
 
 .joke-read-link {
@@ -38,33 +72,36 @@
   color: white;
 }
 
-.lastThree {
-  border-left: 5px solid orange;
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
-  margin-bottom: 50px;
-}
-
 .most-liked {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: lightgoldenrodyellow;
+  background: transparent;
   margin: 10px 0px;
 }
 
 .most-liked > p {
-  color: orange;
-  font-size: 30px;
+  color: #FFE8D6;
+  margin-right: 10px;
+  font-size: 24px;
+}
+.animal-read-link{
+  color:#FFE8D6;
+  font-size: 24px;
+  border: 2px solid #6B705C;
+  padding: 5px;
+  border-radius: 16px;
+}
+.animal-read-link:hover{
+  color: #6B705C;
+  transition: color 0.3s ease;
+}
+ul, a{
+  list-style: none;
+  text-decoration: none;
 }
 
-.best-joke {
-  background: orange;
-}
-
-.best-joke:hover {
-  background: green;
-  color: white;
+h2{
+  color: #6B705C;
 }

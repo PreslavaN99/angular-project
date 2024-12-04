@@ -13,3 +13,10 @@ input,button{
     border-radius: 25px;
     border: 0.5px solid #6B705C;
 }
+button{
+    cursor: pointer;
+}
+button:hover{
+    background-color: #6B705C;
+    color: white;
+}

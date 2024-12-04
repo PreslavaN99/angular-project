@@ -2,10 +2,10 @@
   <h1 class="read-head">Animal</h1>
   <div class="wrap">
     <img src="{{ animal.imageUrl }}" alt="picture-animal" class="image" />
-    <p class="creator">Added by: {{ animal.createdBy }}</p>
-    <div class="read-title">Name: {{ animal.name }}</div>
-    <div class="read-title">Species: {{ animal.species }}</div>
-    <div class="read-content">Info: {{ animal.info }}</div>
+    <p class="creator"><b>Added by:</b> {{ animal.createdBy }}</p>
+    <div class="read-title"><b>Name:</b> {{ animal.name }}</div>
+    <div class="read-title"><b>Species:</b> {{ animal.species }}</div>
+    <div class="read-content"><b>Info:</b> {{ animal.info }}</div>
     <div>
       <button
         class="button-like"
@@ -29,7 +29,7 @@
     </div>
     <p class="added">Date added: {{ added }}</p>
     <div *ngIf="ownerOfAnimal" class="comments">
-      <p>People who want to adopt:</p>
+      <p><b>People who want to adopt:</b></p>
       <div *ngFor="let user of animalUsers">
         <p>{{ user.username }} ({{ user.email }})</p>
       </div>

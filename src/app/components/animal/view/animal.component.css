@@ -10,14 +10,15 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
 }
 
-.wrap{
+.wrap {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center; /* Центриране хоризонтално */
   align-items: center; /* Центриране вертикално */
 }
-.wrap img{
+.wrap img {
   height: 150px;
   width: 150px;
   border-radius: 10px;
@@ -30,7 +31,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
   border-radius: 10px; /* Заоблени ъгли */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
-  margin: 60px auto;
+  margin: 30px auto;
   width: 90%;
   text-align: center;
   padding: 30px;
@@ -40,34 +41,67 @@
 }
 
 .add-comment-wrap label {
-  color: #B7B7A4;
+  color: #b7b7a4;
   font-weight: bold;
   font-size: 30px;
-  border-bottom: 3px solid #B7B7A4;
+  border-bottom: 3px solid #b7b7a4;
   margin: 20px;
 }
 
 .add-comment-wrap textarea {
   width: 70%;
+  resize: none;
   border-radius: 10px;
   padding: 15px;
-  border: 3px solid #B7B7A4;
+  border: 3px solid #b7b7a4;
 }
 
 .add-comment-wrap button {
-  padding: 20px;
-  border-radius: 20px;
-  margin: 20px;
-  font-size: 20px;
-  border: 3px solid #B7B7A4;
+  margin: 5px;
+  align-items: center;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 14px;
+  font-weight: 500;
+  height: 55px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
 }
 
 .add-comment-wrap button:hover {
-  cursor: pointer;
-  background: #6B705C;
+  transform: translateY(-5px);
+  color: #6b705c;
 }
 
-.read-title, .read-keyword {
+.read-title,
+.read-keyword {
   display: flex;
   padding: 10px;
   border-radius: 10px;
@@ -79,19 +113,17 @@
 }
 
 .read-content {
-  background: white;
-  margin: 10px;
-  padding: 30px;
+  background: transparent;
+  margin: 5px;
+  padding: 10px;
   width: 50%;
   height: auto;
-  border-radius: 30px;
   word-break: break-word;
-  border: 3px solid #B7B7A4;
 }
 
 .read-head {
   text-align: center;
-  color: #6B705C;
+  color: #6b705c;
   font-size: 40px;
 }
 
@@ -101,48 +133,58 @@
   justify-content: space-around;
 }
 
-
 .creator {
   margin: 10px;
   font-size: 20px;
-  border-bottom: 3px solid #6B705C;
+  border-bottom: 3px solid #6b705c;
 }
 
 .comments {
-  margin: 40px 80px;
+  margin-top: 20px;
 }
 
 .delete-comment {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  background: #FFE8D6;
-  font-size: 15px;
-  width: fit-content;
-
-}
-
-.delete-comment {
-  color: black;
+  margin: 5px;
+  align-items: center;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 14px;
+  font-weight: 500;
+  height: 32px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 16px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
 }
 
 .delete-comment:hover {
-  cursor: pointer;
-  color: #CB997E;
-  background: black;
-}
-
-.button-like {
-  padding: 5px;
-  border: 3px solid #FFE8D6;
-  background: white;
-  border-bottom-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.button-like:hover {
-  cursor: pointer;
-  background: #CB997E;
+  transform: translateY(-5px);
+  color: #6b705c;
 }
 
 .all-ready-liked {
@@ -152,17 +194,19 @@
 .likes {
   text-align: center;
   font-size: 30px;
-
+  margin: 10px;
 }
 
 .added {
-  border-top: 3px solid #CB997E;
-  margin: 15px;
+  border-top: 3px solid #cb997e;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding: 2px;
 }
 
 .all-jokes {
   padding: 10px 20px;
-  background-color: #CB997E;
+  background-color: #cb997e;
   /*width: 30vw;*/
   /*border-bottom-right-radius: 30px;*/
   /*border-top-right-radius: 30px;*/
@@ -176,20 +220,107 @@
 
 .link-all {
   font-size: 30px;
-  color: #CB997E;
+  color: #cb997e;
 }
 
 .div-comments {
-  line-height: 1.7;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  text-align: right;
+  align-items: center;
 }
 
 .all-jokes:hover {
-  background-color: #CB997E;
+  background-color: #cb997e;
   color: white;
 }
 
 .content-data {
-  color: #CB997E;
+  color: #cb997e;
   font-weight: bolder;
   margin: 5px;
+}
+p {
+  margin: 2px;
+}
+
+.button-like {
+  margin: 5px;
+  align-items: center;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.button-like:hover {
+  transform: translateY(-5px);
+  color: #6b705c;
+}
+
+.button-like:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-like:focus {
+  outline: none;
+  border: 2px solid #6b705c;
+}
+
+.button-like:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-like:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.button-like:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-like:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
+    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.button-like:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }

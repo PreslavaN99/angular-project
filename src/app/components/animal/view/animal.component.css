@@ -1,11 +1,40 @@
+.card {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
+}
+
+.wrap{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центриране хоризонтално */
+  align-items: center; /* Центриране вертикално */
+}
+.wrap img{
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+}
 .add-comment-wrap {
-  background: #FFE8D6;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   margin: 60px auto;
   width: 90%;
+  text-align: center;
   padding: 30px;
   align-items: center;
-  border-radius: 30px;
-  border: 3px solid #6B705C;
   display: flex;
   flex-direction: row;
 }
@@ -39,15 +68,14 @@
 }
 
 .read-title, .read-keyword {
-  background: white;
   display: flex;
   padding: 10px;
-  border-radius: 30px;
+  border-radius: 10px;
   width: auto;
-  border: 3px solid #B7B7A4;
+  border: none;
   align-content: center;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .read-content {

@@ -1,26 +1,23 @@
 <section class="main-section">
-  <img [src]="animal.imageUrl" class="image" alt="picture-animal"/>
   <div class="content">
+    <img [src]="animal.imageUrl" class="image" alt="picture-animal"/>
     <p class="name">
-      <i class="fas fa-text-height"></i>
       <span class="property">Name:</span> {{ animal?.name }}
     </p>
     <p>
-      <i class="fas fa-align-right"></i>
       <span class="property">Info:</span> {{ animal?.info }}
     </p>
     <p>
-      <i class="fas fa-user"></i>
       <span class="property">Created by:</span> {{ animal?.createdBy }}
     </p>
     <p>
-      <i class="fas fa-key"></i>
       <span class="property">Species:</span> {{ animal?.species | lowercase }}
     </p>
     <p>
-      <i class="fas fa-calendar-alt"></i>
       <span class="property">Date added:</span> {{ animal?.createdAt?.split('T')[0] }}
     </p>
-    <a [routerLink]="['/animal-read', animal?.id]" class="animal-card-link">View animal</a>
+    <div class="button">
+      <a [routerLink]="['/animal-read', animal?.id]" class="animal-card-link">View animal</a>
+    </div>
   </div>
 </section>

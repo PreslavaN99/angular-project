@@ -13,7 +13,7 @@ color: #6B705C;
   -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
   border-radius: 10px; /* Заоблени ъгли */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
+  box-shadow: 0 10pxpx rgba(0, 0, 0, 0.1); /* Лека сянка */
   border-radius: 60px;
   margin: 50px;
   padding: 20px;
@@ -27,8 +27,9 @@ color: #6B705C;
   color: #6B705C;
 }
 .animal-add-species{
-  border-radius: 4px;
+  border-radius: 10px;
   margin-bottom: 5px;
+  padding: 5px;
   width: 100%;
   border: 0.5px solid #6B705C;
 
@@ -38,7 +39,7 @@ color: #6B705C;
   width: 100%;
   padding: 5px;
   margin-bottom: 5px;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 14px;
   font-family: inherit;
   resize: none;
@@ -56,9 +57,14 @@ color: #6B705C;
   color: #fff;
   margin: 15px;
   font-size: 14px;
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
   transition: background-color 0.3s;
+}
+img{
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
 }
 .card .add-img:hover {
   background-color: #B7B7A4;

@@ -1,5 +1,10 @@
 .commented-wrap {
-  background-color: lightgoldenrodyellow;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   padding: 15px;
   margin: 10px;
   border-radius: 30px;
@@ -13,9 +18,10 @@
 }
 
 .commented-link {
-  color: darkorange;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
 }
 
 .commented-link:hover {
-  color: green;
+  color:  ;
 }

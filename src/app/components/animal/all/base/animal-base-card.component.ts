@@ -35,9 +35,4 @@ export class AnimalCardComponent {
     this.commentsDisplay = false;
   }
 
-  changeColor(target: EventTarget | null, color: string): void {
-    if (target instanceof HTMLElement) {
-      target.style.color = color;
-    }
-  }
 }

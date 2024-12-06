@@ -5,17 +5,11 @@
 ></app-modal>
 
 <section class="animal-card">
-  <div
-    (mouseover)="changeColor($event.target, 'red')"
-    (mouseout)="changeColor($event.target, 'lightblue')"
-  >
-    <p class="animal-card-data">No: {{ id }}</p>
-    <p class="animal-card-data">Name: {{ animal.name }}</p>
-    <p class="animal-card-data">Species: {{ animal.species }}</p>
-    <p
-      class="animal-card-data hover-data"
-      (click)="toggleModal()"
-    >
+  <div>
+    <p>No: {{ id }}</p>
+    <p>Name: {{ animal.name }}</p>
+    <p>Species: {{ animal.species }}</p>
+    <p (click)="toggleModal()">
       Total likes: {{ animal.likes.length || 0 }} (show)
     </p>
     <p

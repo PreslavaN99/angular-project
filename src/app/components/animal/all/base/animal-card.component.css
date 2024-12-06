@@ -1,36 +1,20 @@
-.joke-card {
-  width: 30%;
+.animal-card{
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   padding: 10px;
-  border: 3px solid orange;
-  margin: 10px;
-  font-size: 1.2rem;
-  line-height: 2;
 }
-
-.joke-card-link {
-  color: black;
-  padding: 10px 20px;
-  margin-top: 40px;
-  font-size: 1.5rem;
-  background-color: orange;
-  font-weight: bolder;
-  font-family: Futura, serif;
-}
-
-.joke-card-link:hover {
-  background-color: pink;
-  border-radius: 30px;
-}
-
-.joke-card-data {
-
-  font-family: "American Typewriter", serif;
-  color: lightblue;
-  word-break: break-word;
+p{
+  margin: 3px;
 }
 
 .comment {
-  color: orange;
+  color: #6B705C;
+  font-weight: 300;
   margin: 10px 30px;
 }
 
@@ -41,8 +25,6 @@
   bottom: auto;
   margin-left: auto;
   margin-right: auto;
-  transform: translate(0%, 100%);
-  background-color: lightblue;
   color: black;
   padding: 20px;
   line-height: 1.5;
@@ -59,4 +41,23 @@
 
 .hover-data:hover {
   cursor: pointer;
+}
+
+.animal-card-link{
+  padding: 3px;
+  margin: 2px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: transparent;
+  border: 0.5px solid #6B705C;
+  background-color: #6B705C;
+  border-radius: 12px;
+
+}
+.animal-card-link:hover{
+
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+
 }

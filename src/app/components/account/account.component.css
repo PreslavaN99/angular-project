@@ -1,3 +1,6 @@
+h1{
+  color: #6B705C;
+}
 .wrap-cards {
   display: flex;
   flex-direction: column;
@@ -20,7 +23,12 @@
 }
 
 .profile {
-  background: #FFE8D6;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   padding: 30px;
   margin: 20px;
   font-size: 35px;
@@ -36,6 +44,20 @@
 
 .pad {
   margin: 20px 20px 50px;
+  text-decoration: none;
+  color: #6B705C;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
+  padding: 7px;
+}
+.pad:hover{
+  cursor: pointer;
+  color: #FFE8D6;
+  transition: color 0.3s;
 }
 
 .title-fav {
@@ -62,13 +84,6 @@
   color: #6B705C;
 }
 
-.wrap-commented-jokes {
-  background-color: #FFE8D6;
-  padding: 20px;
-  border-radius: 30px;
-  margin: 10px;
-  width: 70%;
-}
 
 .commented-jokes-head {
   text-align: center;

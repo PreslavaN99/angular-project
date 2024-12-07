@@ -1,17 +1,95 @@
 .wrap-manage {
-  margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  align-content: center;
   align-items: center;
+}
+h1{
+  text-align: center;
+  color: #6B705C;
 }
 
 .no-content {
-  background: #FFE8D6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2); /* Прозрачен фон */
+  backdrop-filter: blur(10px); /* Размазване */
+  -webkit-backdrop-filter: blur(10px); /* Поддръжка за WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Гранична линия */
+  border-radius: 10px; /* Заоблени ъгли */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лека сянка */
   margin: 100px;
   font-size: 50px;
   padding: 30px;
   color: black;
-  border-bottom-left-radius: 60px;
-  border-top-right-radius: 60px;
+}
+
+.link{
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.link::after,
+.link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.link::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #6B705C;
+  border-radius: 10px;
+}
+
+.link::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.link:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.link:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.link :active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
 }

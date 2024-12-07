@@ -1,0 +1,23 @@
+.main-section{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+p{
+    padding: 2px;
+}
+
+.button-animal-edit{
+    background-color: transparent;
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+    margin-top: 3px;
+    color: #6B705C;
+}
+.button-animal-edit:hover{
+    cursor: pointer;
+    color: #FFE8D6;
+    transition: color 0.3s;
+}

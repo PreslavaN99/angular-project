@@ -12,13 +12,13 @@
     <a class="link pad" routerLink="/animal-find">Find Animals here <i class="fab fa-searchengin"></i></a>
   </div>
   <div class="wrap-commented-Animals">
-    <p>Commented Animals by you</p>
+    <p class="com-an">Commented Animals by you</p>
     <section class="commented-Animals">
       <app-commented-animal *ngFor="let animal of commentedAnimals" [animal]="animal"></app-commented-animal>
     </section>
   </div>
-  <div class="wrap-cards fav">
-    <p>Favourites Animals</p>
+  <div class="wrap-cards-fav">
+    <p class="fav-animal-title">Favourites Animals</p>
     <div *ngFor="let animal of (favouritesAnimal | async) ?? []" class="fav-animal">
       <app-animal-fav
         [animal]="animal"

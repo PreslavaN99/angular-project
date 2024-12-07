@@ -12,16 +12,24 @@
   text-align: center;
 }
 
-.commented-title {
-  color: orange;
-  font-weight: bolder;
+.commented-name{
+  color: #6B705C;
+  padding: 3px;
+  font-weight: 500;
+}
+p{
+  margin: 8px;
 }
 
 .commented-link {
-  color: rgb(255, 255, 255);
+  color: #6B705C;
+  margin: 5px;
   background-color: transparent;
+  padding: 5px;
 }
 
 .commented-link:hover {
-  color:  ;
+  cursor: pointer;
+  color: #FFE8D6;
+  transition: color 0.3s;
 }

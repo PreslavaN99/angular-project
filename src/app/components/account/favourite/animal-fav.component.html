@@ -1,28 +1,22 @@
 <section class="main-section">
   <div class="info">
     <p class="name">
-      <i class="fas fa-text-height"></i>
-      <span class="property">Name:</span> {{ animal?.name }}
+      <span class="property"><b>Name:</b></span> {{ animal?.name }}
     </p>
     <p>
-      <i class="fas fa-align-right"></i>
-      <span class="property">Info:</span> {{ animal?.info }}
+      <span class="property"><b>Info:</b></span> {{ animal?.info }}
     </p>
     <p>
-      <i class="fas fa-user"></i>
-      <span class="property">Created by:</span> {{ animal?.createdBy }}
+      <span class="property"><b>Created by:</b></span> {{ animal?.createdBy }}
     </p>
     <p>
-      <i class="fas fa-key"></i>
-      <span class="property">Species:</span> {{ animal?.species }}
+      <span class="property"><b>Species:</b></span> {{ animal?.species }}
     </p>
     <p>
-      <i class="fas fa-calendar-alt"></i>
-      <span class="property">Date added:</span> {{ getFormattedDate(animal?.createdAt) }}
+      <span class="property"><b>Date added:</b></span> {{ getFormattedDate(animal?.createdAt) }}
     </p>
 
-    <button (click)="onDelete()" class="button-animal-edit">
-      Remove favourite animal <i class="fas fa-eraser"></i>
+    <button (click)="onDelete()" class="button-animal-edit">Remove Animal
     </button>
   </div>
 </section>

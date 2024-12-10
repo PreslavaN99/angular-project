@@ -1,19 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {AnimalService} from '../../../api/service/animal.service';
-import {NgForOf, NgIf} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AnimalService } from '../../api/service/animal.service';
+import { NgForOf, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.component.html',
   styleUrls: ['./animal.component.css'],
-  imports: [
-    NgIf,
-    NgForOf,
-    FormsModule
-  ],
-  standalone: true
+  imports: [NgIf, NgForOf, FormsModule],
+  standalone: true,
 })
 export class AnimalComponent implements OnInit {
   animal: any = {};
@@ -27,14 +23,14 @@ export class AnimalComponent implements OnInit {
   allReadyLiked: boolean = false;
   added: string = '';
   dbError: string[] = [];
-  fieldsCheck = {allFields: false};
+  fieldsCheck = { allFields: false };
   username: string | null = sessionStorage.getItem('authenticatedUser');
+  info: string = ''; // Полето за въвеждане на коментар
 
   constructor(
     private animalService: AnimalService,
     private route: ActivatedRoute
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
@@ -60,42 +56,34 @@ export class AnimalComponent implements OnInit {
   }
 
   loadFavouriteStatus(): void {
-    this.animalService
-      .getFavouritesAnimalByUsername(this.username!)
-      .subscribe((data) => {
-        this.favAnimal = data.some((x: any) => x.id === this.animal.id);
-      });
+    this.animalService.getFavouritesAnimalByUsername(this.username!).subscribe((data) => {
+      this.favAnimal = data.some((x: any) => x.id === this.animal.id);
+    });
   }
 
   loadAdopters(): void {
-    this.animalService
-      .findAllUsersWhoWantToAdoptByAnimalId(this.animal.id)
-      .subscribe({
-        next: (data) => (this.animalUsers = data),
-        error: (err) => console.error(err),
-      });
+    this.animalService.findAllUsersWhoWantToAdoptByAnimalId(this.animal.id).subscribe({
+      next: (data) => (this.animalUsers = data),
+      error: (err) => console.error(err),
+    });
   }
 
-  addComment(info: string): void {
-    if (!info || info.trim().length < 2) {
+  addComment(): void {
+    if (!this.info || this.info.trim().length < 2) {
       this.fieldsCheck.allFields = true;
       return;
     }
     this.fieldsCheck.allFields = false;
 
-    const comment = {
-      info,
-      animalId: this.animal.id,
-      ownerOfComment: this.username,
-    };
-
-    this.animalService.onAddComment(info, this.animal.id, this.username).subscribe({
+    this.animalService.onAddComment(this.info, this.animal.id, this.username).subscribe({
       next: (data) => {
         if (data.cause) {
           this.dbError = data.cause.split(', ');
           return;
         }
         this.comments.push(data);
+        this.info = '';
+
       },
       error: (err) => console.error(err),
     });

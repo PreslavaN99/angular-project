@@ -8,10 +8,10 @@
   <label>Enter username (min 3 symbols)</label>
   <input
     name="username"
+    [(ngModel)]="enterUsernameAdminRole"
     (keyup)="fetchUsers.emit($event)"
-    (input)="setUsernameFromInputForAdminRole($event)"
   />
   <button (click)="toggleModal($event)" type="submit">
-   Add
+    Add
   </button>
 </form>

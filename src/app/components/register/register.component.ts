@@ -33,10 +33,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      repassword: ['', [Validators.required]]
+      username: ['', [Validators.required, Validators.minLength(5)]],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(5)]],
+      repassword: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
@@ -76,3 +76,4 @@ export class RegisterComponent implements OnInit {
     );
   }
 }
+

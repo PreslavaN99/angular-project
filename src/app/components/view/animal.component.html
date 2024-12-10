@@ -1,15 +1,26 @@
 <h1 class="read-head">Animal</h1>
 <div class="wrap">
-  <img src="{{ animal.imageUrl }}" alt="picture-animal" class="image"/>
+  <img src="{{ animal.imageUrl }}" alt="picture-animal" class="image" />
   <p class="creator">Added by: {{ animal.createdBy }}</p>
   <div class="read-title">Name: {{ animal.name }}</div>
   <div class="read-title">Species: {{ animal.species }}</div>
   <div class="read-content">Info: {{ animal.info }}</div>
   <div>
-    <button class="button-like" *ngIf="!ownerOfAnimal && !favAnimal" (click)="addToFavourites()">Add to Favourites
+    <button
+      class="button-like"
+      *ngIf="!ownerOfAnimal && !favAnimal"
+      (click)="addToFavourites()"
+    >
+      Add to Favourites
     </button>
     <p class="all-ready-liked" *ngIf="favAnimal">Already added to favourites.</p>
-    <button class="button-like" *ngIf="!ownerOfAnimal && !allReadyLiked" (click)="addLike()">Like</button>
+    <button
+      class="button-like"
+      *ngIf="!ownerOfAnimal && !allReadyLiked"
+      (click)="addLike()"
+    >
+      Like
+    </button>
     <p class="all-ready-liked" *ngIf="allReadyLiked">Already liked.</p>
     <p class="likes">Total likes: {{ likes }}</p>
   </div>
@@ -35,17 +46,31 @@
     >
       Cancel Adoption
     </button>
-    <p *ngIf="wantToAdopt" class="adoption-status">You have requested to adopt this animal.</p>
+    <p *ngIf="wantToAdopt" class="adoption-status">
+      You have requested to adopt this animal.
+    </p>
   </div>
 
-  <form class="add-comment-wrap" (ngSubmit)="addComment(commentInput.value)">
+  <!-- Коментари: форма за добавяне на коментар -->
+  <form class="add-comment-wrap" (ngSubmit)="addComment()">
     <label for="commentInput">Add a comment:</label>
-    <textarea id="commentInput" #commentInput></textarea>
+    <textarea 
+      id="commentInput" 
+      [(ngModel)]="info"  
+      name="commentInput" 
+      required
+    ></textarea>
     <button type="submit">Add Comment</button>
   </form>
+
+  <!-- Преглед на съществуващите коментари -->
   <div *ngFor="let comment of comments" class="div-comments">
     <p>{{ comment.ownerOfComment }}: {{ comment.content }}</p>
-    <button class="delete-comment" *ngIf="username === comment.ownerOfComment" (click)="deleteComment(comment.id)">
+    <button
+      class="delete-comment"
+      *ngIf="username === comment.ownerOfComment"
+      (click)="deleteComment(comment.id)"
+    >
       Delete
     </button>
   </div>

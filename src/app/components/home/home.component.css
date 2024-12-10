@@ -1,3 +1,6 @@
+.card{
+  background: #A5A58D;
+}
 .main {
   display: flex;
   flex-direction: row;

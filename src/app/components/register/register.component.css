@@ -3,10 +3,6 @@
   flex-direction: row;
 }
 
-.errors {
-  padding: 20px;
-  margin-left: 30px;
-}
 form{
   background-color: transparent;
 }
@@ -43,7 +39,7 @@ form{
   padding: 10px 0;
   font-size: 16px;
   color: #FFE8D6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #FFE8D6;
   outline: none;
@@ -274,12 +270,7 @@ form{
   position: absolute;
   display: block;
 }
-
-.warning {
-  background-color: #FFE8D6;
-  color: red;
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 30px;
-  text-align: center;
+.warning{
+  margin-bottom: 20px;
+  color: #FFE8D6;
 }

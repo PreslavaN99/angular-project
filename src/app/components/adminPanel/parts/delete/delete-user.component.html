@@ -10,11 +10,8 @@
   <label>Enter username (min 3 symbols)</label>
   <input
     name="username"
-    (input)="enterUsernameForDelete($event)"
+    [(ngModel)]="enterUsernameDelete"
     (keyup)="fetchUsers.emit($event)"
   />
-  <i class="fas fa-search"></i>
-  <button (click)="toggleModal($event)" type="button">
-    <i class="fas fa-eraser"></i> Delete
-  </button>
+  <button (click)="toggleModal($event)" type="button">Delete</button>
 </form>

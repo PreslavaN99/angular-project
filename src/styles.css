@@ -3,7 +3,8 @@ html, * {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  background-color: #B7B7A4;
+  background: #A5A58D;
+
 }
 input,span, button, textarea, select,form, label, div, p, textarea,b ,option, h1,h2,h3,h4,h5,h6 {
   font-family: 'Roboto', sans-serif; 

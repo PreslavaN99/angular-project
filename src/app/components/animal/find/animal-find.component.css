@@ -105,3 +105,25 @@ ul, a{
 h2{
   color: #6B705C;
 }
+
+.species-dropdown{
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6B705C;
+  border-radius: 30px;
+  color: #6B705C;
+  background-color: #FFE8D6;
+  text-align: center;
+  cursor: pointer;
+}
+
+.species-dropdown:hover {
+  background-color: #DDBEA9;
+  transition: background-color 0.3s ease;
+}
+
+.species-dropdown:focus {
+  outline: none;
+  border-color: #CB997E;
+}

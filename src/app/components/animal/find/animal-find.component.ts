@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import {Animal} from '../../../model/Animal';
 import {AnimalService} from '../../../api/service/animal.service';
@@ -23,19 +24,19 @@ export class AnimalFindComponent implements OnInit {
   animals: Animal[] = [];
   lastThreeAnimals: Animal[] = [];
   mostLiked: Animal[] = [];
-  keyword: string = '';
+  speciesOptions: string[] = ['cat', 'dog', 'other']; // Dropdown options
+  selectedSpecies: string = ''; // Selected species
 
-  constructor(private animalService: AnimalService) {
-  }
+  constructor(private animalService: AnimalService) {}
 
   ngOnInit(): void {
     this.loadMostLikedAnimals();
     this.loadLastThreeAnimals();
   }
 
-  getAnimalsByKeyword(keyword: string): void {
-    if (keyword.length > 1) {
-      this.animalService.getAnimalsFromDbByspecies(keyword).subscribe({
+  getAnimalsBySpecies(): void {
+    if (this.selectedSpecies) {
+      this.animalService.getAnimalsFromDbByspecies(this.selectedSpecies).subscribe({
         next: (data: Animal[]) => {
           this.animals = data;
         },

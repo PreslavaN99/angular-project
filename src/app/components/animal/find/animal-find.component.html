@@ -1,7 +1,6 @@
 <div class="card">
   <h1>Find Animals</h1>
 
-  <!-- Most Liked Animals Section -->
   <div class="most-liked" *ngIf="mostLiked.length; else notEnoughLikes">
     <p>Check the most liked Animal:</p>
     <ul class="ul-usernames">
@@ -16,24 +15,25 @@
     <p>Not enough likes</p>
   </ng-template>
 
-  <!-- View All Animals -->
   <section class="all-Animals">
     <a class="link-all" routerLink="/find-all">
       <i class="fas fa-list"></i> Here you can view all Animals
     </a>
   </section>
 
-  <!-- Search By Keyword -->
   <div class="search-keyword-wrap">
     <div class="div-search-keyword-wrap">
       <label class="label">Find by species:</label>
-      <input
-        class="input-keyword-search"
-        name="keyword"
-        placeholder="cat/dog/other"
-        [(ngModel)]="keyword"
-        (keyup)="getAnimalsByKeyword(keyword)"
-      />
+      <select
+        class="species-dropdown"
+        [(ngModel)]="selectedSpecies"
+        (change)="getAnimalsBySpecies()"
+      >
+        <option value="" disabled>Select a species</option>
+        <option *ngFor="let species of speciesOptions" [value]="species">
+          {{ species }}
+        </option>
+      </select>
     </div>
 
     <div *ngIf="animals.length">
@@ -51,7 +51,6 @@
     </div>
   </div>
 
-  <!-- Last Three Added Animals -->
   <div class="lastThree">
     <h2 class="h2-three">
       Here you can see the last three added animals

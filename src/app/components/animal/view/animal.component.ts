@@ -29,12 +29,12 @@ export class AnimalComponent implements OnInit {
   dbError: string[] = [];
   fieldsCheck = {allFields: false};
   username: string | null = sessionStorage.getItem('authenticatedUser');
+  newComment: string = ''; // Добавена променлива за свързване с инпут полето
 
   constructor(
     private animalService: AnimalService,
     private route: ActivatedRoute
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
@@ -76,26 +76,27 @@ export class AnimalComponent implements OnInit {
       });
   }
 
-  addComment(info: string): void {
-    if (!info || info.trim().length < 2) {
+  addComment(): void {
+    if (!this.newComment || this.newComment.trim().length < 2) {
       this.fieldsCheck.allFields = true;
       return;
     }
     this.fieldsCheck.allFields = false;
 
     const comment = {
-      info,
+      info: this.newComment,
       animalId: this.animal.id,
       ownerOfComment: this.username,
     };
 
-    this.animalService.onAddComment(info, this.animal.id, this.username).subscribe({
+    this.animalService.onAddComment(this.newComment, this.animal.id, this.username).subscribe({
       next: (data) => {
         if (data.cause) {
           this.dbError = data.cause.split(', ');
           return;
         }
         this.comments.push(data);
+        this.newComment = ''; // Изчистване на полето за коментари
       },
       error: (err) => console.error(err),
     });
@@ -126,7 +127,7 @@ export class AnimalComponent implements OnInit {
     this.animalService.adoptAnimalByUser(this.username!, this.animal.id).subscribe({
       next: () => {
         this.wantToAdopt = true;
-        this.loadAdopters(); // Reload adopters list after adoption
+        this.loadAdopters();
       },
       error: (err) => console.error(err),
     });
@@ -136,7 +137,7 @@ export class AnimalComponent implements OnInit {
     this.animalService.removeAnimalFromUser(this.username!, this.animal.id).subscribe({
       next: () => {
         this.wantToAdopt = false;
-        this.loadAdopters(); // Reload adopters list after removal
+        this.loadAdopters();
       },
       error: (err) => console.error(err),
     });

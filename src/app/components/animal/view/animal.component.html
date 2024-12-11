@@ -54,11 +54,14 @@
       </p>
     </div>
 
-    <form class="add-comment-wrap" (ngSubmit)="addComment(commentInput.value)">
+    <!-- Добавяне на коментар -->
+    <form class="add-comment-wrap" (ngSubmit)="addComment()">
       <label for="commentInput">Add a comment:</label>
-      <textarea id="commentInput" #commentInput></textarea>
+      <textarea id="commentInput" [(ngModel)]="newComment" name="comment"></textarea>
       <button type="submit">Add Comment</button>
     </form>
+
+    <!-- Списък с коментари -->
     <div *ngFor="let comment of comments" class="div-comments">
       <p>{{ comment.ownerOfComment }}: {{ comment.content }}</p>
       <button

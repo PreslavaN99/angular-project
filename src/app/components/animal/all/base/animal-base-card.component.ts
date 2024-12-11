@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import {Animal} from '../../../../model/Animal';
 import {RouterLink} from '@angular/router';
 import {NgForOf, NgIf} from '@angular/common';
-import {ModalComponent} from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-animal-card',
@@ -11,8 +11,7 @@ import {ModalComponent} from '../modal/modal.component';
   imports: [
     RouterLink,
     NgForOf,
-    NgIf,
-    ModalComponent
+    NgIf
   ],
   standalone: true
 })

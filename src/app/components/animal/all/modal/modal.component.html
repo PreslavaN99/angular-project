@@ -1,8 +1,0 @@
-<div class="modal-style-likes">
-  <p class="title-modal-likes">Users who liked this animal:</p>
-  <p *ngIf="likedByUsers; else noLikes">{{ likedByUsers }}</p>
-  <ng-template #noLikes>
-    <p>No likes</p>
-  </ng-template>
-  <button (click)="onClose()" class="button-animal-edit">Back</button>
-</div>

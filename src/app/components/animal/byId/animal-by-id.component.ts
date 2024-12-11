@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {AnimalService} from '../../../api/service/animal.service';
 import {NgForOf, NgIf} from '@angular/common';
 import {AnimalDeleteModalComponent} from './modal/animal-delete-modal.component';
+import { log } from 'console';
 
 @Component({
   selector: 'app-animal-by-id',
@@ -53,7 +54,7 @@ export class AnimalByIdComponent implements OnInit {
           this.names.user = data.createdBy;
           this.animalForm.patchValue({
             name: data.name,
-            species: data.species,
+            species: data.species?.toLowerCase(),
             info: data.info
           });
 
@@ -86,6 +87,7 @@ export class AnimalByIdComponent implements OnInit {
       formData.append('info', this.animalForm.get('info')?.value.trim());
       formData.append('username', sessionStorage.getItem('authenticatedUser') || '');
 
+    console.log(formData)
       this.animalService.editAnimalById(formData, id).subscribe({
         next: (data: any) => {
           if (data.cause) {

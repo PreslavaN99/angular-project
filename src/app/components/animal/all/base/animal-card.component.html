@@ -1,8 +1,4 @@
-<app-modal
-  *ngIf="isOpen"
-  [likes]="animal.likes"
-  (closeModal)="toggleModal()"
-></app-modal>
+
 
 <section class="animal-card">
   <div>
@@ -10,7 +6,7 @@
     <p>Name: {{ animal.name }}</p>
     <p>Species: {{ animal.species }}</p>
     <p (click)="toggleModal()">
-      Total likes: {{ animal.likes.length || 0 }} (show)
+      Total likes: {{ animal.likes.length || 0 }} 
     </p>
     <p
       (mouseenter)="showComments()"
